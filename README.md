@@ -25,9 +25,13 @@ Cuenta con un diseño responsive.
 Saludos!
 
 Mis redes de contacto: 
+
 Linkedin: https://www.linkedin.com/in/alexk8uu/
+
 Github: https://github.com/alexk8uu
+
 E-mail: fredyalejandrocarrizo@gmail.com
+
 Telf.: +54 9 387 442 9868
 
 
