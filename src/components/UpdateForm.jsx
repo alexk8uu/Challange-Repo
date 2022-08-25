@@ -1,35 +1,26 @@
 import styled from "styled-components";
 import { useForm } from "react-hook-form";
 import { mobil, tablet } from "../responsibe.js";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addUser } from "../redux/FormRedux.js";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
-function UpdateForm(props) {
 
-  const updateUser = useSelector((store) => store.form.userEdit);
+function UpdateForm() {
+
   const [add, setAdd] = useState(false);
-  const [user, setUser] = useState();
-
-  console.log("ESTO ES UPDATE",updateUser)
 
   const {
     register,
     reset,
     handleSubmit,
-    watch,
-    setValue,
     formState: { errors },
-  } = useForm({
-    defaultValues: updateUser
-  });
-
+  } = useForm();
 
   const dispatch = useDispatch();
 
   const onSubmit = (data) => {
-    console.log("ESTA ES LA DATA", data);
     dispatch(addUser(data));
     reset();
     setAdd(true);
@@ -96,18 +87,6 @@ function UpdateForm(props) {
   );
 }
 
-const Text = styled.div`
-  height: 42px;
-  width: 10%;
-  display: flex;
-  color: white;
-  align-items: center;
-  justify-content: center;
-  background-color: crimson;
-  border-radius: 25px 0px 0px 25px;
-  padding: 0 25px;
-`;
-
 const AddUserText = styled.span`
   font-size: 14px;
   font-weight: 600;
@@ -135,6 +114,14 @@ const Wrapper = styled.div`
   height: auto;
   background-color: #03484c;
   display: flex;
+
+  ${tablet({
+    flexDirection: "column",
+    width: "600px",
+  })};
+  ${mobil({
+    width: "300px"
+  })}
 `;
 const Left = styled.div`
   flex: 1;
@@ -176,6 +163,23 @@ const Input = styled.input`
   height: 40px;
   width: 40%;
   border-radius: 0 25px 25px 0;
+  ${mobil({
+    height: "30px",
+  })}
+`;
+const Text = styled.div`
+  height: 42px;
+  width: 10%;
+  display: flex;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  background-color: crimson;
+  border-radius: 25px 0px 0px 25px;
+  padding: 0 25px;
+  ${mobil({
+    height: "32px",
+  })}
 `;
 const Buttom = styled.button`
   font-size: 15px;

@@ -4,16 +4,31 @@ function Footer(props) {
   return (
     <Container>
       <Wrapper>
-        <Left>LEFT</Left>
-        <Right>RIGTH</Right>
+        <Left>Fredy Alejandro Carrizo</Left>
+        <Right>Full Stack Developer</Right>
       </Wrapper>
     </Container>
   );
 }
 
-const Wrapper = styled.div``;
-const Left = styled.div``;
-const Right = styled.div``;
+const Wrapper = styled.div`
+  display: flex;
+  width: 100%;
+`;
+const Left = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  color: white;
+`;
+const Right = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  color: white;
+`;
 
 const Container = styled.div`
   min-height: 120px;

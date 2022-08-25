@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { DataGrid } from "@mui/x-data-grid";
 import { useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addUser, deleteUser, updateUser } from "../redux/FormRedux";
+import { addUser, deleteUser} from "../redux/FormRedux";
 import { mobil, tablet } from "../responsibe.js";
 
 function Form({ setCheck }) {
@@ -38,17 +38,12 @@ function Form({ setCheck }) {
     {
       field: "action",
       headerName: "Action",
-      width: 200,
+      width: 100,
       renderCell: (params) => {
         return (
-          <ContainerActions>
-            <ViewButtom onClick={() => handleUpdate(params.row)}>
-              Update
-            </ViewButtom>
-            <DeletedButtom onClick={() => handleDelete(params.row)}>
-              Delete
-            </DeletedButtom>
-          </ContainerActions>
+          <DeletedButtom onClick={() => handleDelete(params.row)}>
+            Delete
+          </DeletedButtom>
         );
       },
     },
@@ -56,11 +51,6 @@ function Form({ setCheck }) {
 
   const handleDelete = (row) => {
     dispatch(deleteUser(row));
-  };
-
-  const handleUpdate = (row) => {
-    dispatch(updateUser(row));
-    setCheck(1);
   };
 
   const rows = useSelector((store) => store.form);
@@ -82,7 +72,7 @@ function Form({ setCheck }) {
     { field: "hobbie", headerName: "Hobbie", width: 150 },
   ];
 
-  console.log("esto es row", rows.row);
+
 
   return (
     <Container>
@@ -102,20 +92,6 @@ function Form({ setCheck }) {
     </Container>
   );
 }
-
-const ContainerActions = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 15px;
-`;
-
-const ViewButtom = styled.div`
-  padding: 2px 5px;
-  border-radius: 5px;
-  color: darkblue;
-  border: 1px dotted rgba(0, 0, 139, 0.5);
-  cursor: pointer;
-`;
 
 const DeletedButtom = styled.div`
   display: flex;
@@ -139,7 +115,7 @@ const Container = styled.div`
 
 const ContainerForm = styled.div`
   height: 400px;
-  width: 900px;
+  width: 800px;
 
   ${tablet({
     width: "600px",
