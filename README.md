@@ -14,6 +14,8 @@ Funciones:
 
 *Puede Añadadir un nuevo usuario desde la seccion de "Agregar Usuarios" y verlo reflejado en la parte de "Consultar Usuarios"
 
+*El formulario esta controlado y requiere el correcto ingreso de los datos. 
+
 *Puede filtrar por todos los elementos de la lista, realizar busquedas y aplicar filtros indivudiales.
 
 *Puede eliminar a un usuario de la lista.
